@@ -4,13 +4,15 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotor : MonoBehaviour {
-    [SerializeField]
-    private Camera cam;
+    
 
     private Vector3 velocity = Vector3.zero;
     private Vector3 rotation = Vector3.zero;
     private Vector3 thrusterForce = Vector3.zero;
 
+    [Header("Camera settings:")]
+    [SerializeField]
+    private Camera cam;
     [SerializeField]
     private float cameraRotationLimit = 85f;
     private float cameraRotationX = 0f;

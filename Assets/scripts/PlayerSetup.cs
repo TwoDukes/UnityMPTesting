@@ -10,29 +10,29 @@ public class PlayerSetup : NetworkBehaviour {
 
     private void Start()
     {
-        if(!isLocalPlayer)
+        if(!isLocalPlayer) //if not local player
         {
-            foreach(Behaviour item in componentsToDiable)
+            foreach(Behaviour item in componentsToDiable) //disable all player control scripts
             {
-                item.enabled = false;
+                item.enabled = false; 
             }
         }
-        else
+        else //if local player
         {
             sceneCamera = Camera.main;
             if(sceneCamera != null)
             {
-                sceneCamera.gameObject.SetActive(false);
+                sceneCamera.gameObject.SetActive(false); // turn off lobby camera
             }
         }
             
     }
 
-    private void OnDisable()
+    private void OnDisable() //basically a destructor
     {
         if(sceneCamera != null)
         {
-            sceneCamera.gameObject.SetActive(true);
+            sceneCamera.gameObject.SetActive(true); //turns on lobby camera
         }
     }
 
