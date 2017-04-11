@@ -9,8 +9,12 @@ public class PlayerMotor : MonoBehaviour {
 
     private Vector3 velocity = Vector3.zero;
     private Vector3 rotation = Vector3.zero;
-    private Vector3 cameraRotation = Vector3.zero;
+    private Vector3 thrusterForce = Vector3.zero;
 
+    [SerializeField]
+    private float cameraRotationLimit = 85f;
+    private float cameraRotationX = 0f;
+    private float currentCameraRotationX = 0f;
 
     private Rigidbody rb;
 
@@ -32,15 +36,24 @@ public class PlayerMotor : MonoBehaviour {
         {
             rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
         }
+
+        if(thrusterForce != Vector3.zero)
+        {
+            rb.AddForce(thrusterForce * Time.fixedDeltaTime, ForceMode.Acceleration);
+        }
     }
 
     private void PerformRotation() //rotates player and camera
     {
-            rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation));
-            if (cam != null)
-            {
-            cam.transform.Rotate(-cameraRotation);
-            }
+        rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation)); //apply player rotation
+        if (cam != null)
+        {
+            //set rotation and clamp it
+            currentCameraRotationX -= cameraRotationX;
+            currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
+            //apply camera rotation
+            cam.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
+        }
     }
 
     ///////////PUBLIC MEMEBER FUNCTIONS BELOW
@@ -54,12 +67,14 @@ public class PlayerMotor : MonoBehaviour {
         rotation = _rotation;
     }
 
-    public void RotateCamera(Vector3 _cameraRotation) //public member function for setting cameraRotation
+    public void RotateCamera(float _cameraRotationX) //public member function for setting cameraRotation
     {
-        cameraRotation = _cameraRotation; 
+        cameraRotationX = _cameraRotationX; 
     }
 
-
-
+    public void ApplyThruster(Vector3 _thrusterForce) //public member function for setting thrusterForce
+    {
+        thrusterForce = _thrusterForce;
+    }
 
 }
