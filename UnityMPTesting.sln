@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityMPTesting.Plugins", "UnityMPTesting.Plugins.csproj", "{8A5F2F35-45B3-3FFF-B8D7-B958CEBE4D51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityMPTesting", "UnityMPTesting.csproj", "{7B6FCA0C-2EB9-230D-C04D-FF2A609D24FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityMPTesting.Editor.Plugins", "UnityMPTesting.Editor.Plugins.csproj", "{D32F35FB-EA0D-6D11-DD02-8ABD2F471E7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A5F2F35-45B3-3FFF-B8D7-B958CEBE4D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A5F2F35-45B3-3FFF-B8D7-B958CEBE4D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A5F2F35-45B3-3FFF-B8D7-B958CEBE4D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A5F2F35-45B3-3FFF-B8D7-B958CEBE4D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B6FCA0C-2EB9-230D-C04D-FF2A609D24FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B6FCA0C-2EB9-230D-C04D-FF2A609D24FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B6FCA0C-2EB9-230D-C04D-FF2A609D24FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B6FCA0C-2EB9-230D-C04D-FF2A609D24FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D32F35FB-EA0D-6D11-DD02-8ABD2F471E7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D32F35FB-EA0D-6D11-DD02-8ABD2F471E7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D32F35FB-EA0D-6D11-DD02-8ABD2F471E7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D32F35FB-EA0D-6D11-DD02-8ABD2F471E7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
