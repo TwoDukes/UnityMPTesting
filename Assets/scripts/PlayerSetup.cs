@@ -1,6 +1,7 @@
 ﻿using UnityEngine.Networking;
 using UnityEngine;
 
+[RequireComponent(typeof(Player))]
 public class PlayerSetup : NetworkBehaviour {
 
     [SerializeField]
@@ -26,13 +27,6 @@ public class PlayerSetup : NetworkBehaviour {
                 sceneCamera.gameObject.SetActive(false); // turn off lobby camera
             }
         }
-        RegisterPlayer(); //Registers player
-    }
-
-    void RegisterPlayer()
-    {
-        string _ID = "Player" + GetComponent<NetworkIdentity>().netId;
-        transform.name = _ID;
     }
 
     private void AssignRemoteLayer()
@@ -54,6 +48,18 @@ public class PlayerSetup : NetworkBehaviour {
         {
             sceneCamera.gameObject.SetActive(true); //turns on lobby camera
         }
+
+        GameManager.UnRegisterPlayer(transform.name);
+    }
+
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
+
+        string _netID = GetComponent<NetworkIdentity>().netId.ToString();
+        Player _player = GetComponent<Player>();
+
+        GameManager.RegisterPlayer(_netID, _player);
     }
 
 }

@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 114033713574689360}
   - component: {fileID: 114273684747318320}
   - component: {fileID: 114185756028945002}
+  - component: {fileID: 114143051008088196}
   - component: {fileID: 114974233704011780}
   - component: {fileID: 114966816690831418}
   - component: {fileID: 114655099410800016}
@@ -548,6 +549,17 @@ MonoBehaviour:
   thrusterForce: 1200
   jointSpring: 15
   jointMaxForce: 40
+--- !u!114 &114143051008088196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729408289307048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95b5cff03cdf3f4c87f2e006e23a8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114185756028945002
 MonoBehaviour:
   m_ObjectHideFlags: 1
