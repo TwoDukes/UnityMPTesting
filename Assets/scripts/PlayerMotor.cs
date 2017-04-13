@@ -4,8 +4,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotor : MonoBehaviour {
-    
-
     private Vector3 velocity = Vector3.zero;
     private Vector3 rotation = Vector3.zero;
     private Vector3 thrusterForce = Vector3.zero;
@@ -54,7 +52,7 @@ public class PlayerMotor : MonoBehaviour {
             //set rotation and clamp it
             currentCameraRotationX -= cameraRotationX;
             currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
-            //apply camera rotation
+            //apply camera rotation to the transform of camera
             cam.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
         }
     }

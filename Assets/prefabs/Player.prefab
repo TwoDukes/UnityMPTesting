@@ -127,13 +127,14 @@ GameObject:
   - component: {fileID: 114205579192824534}
   - component: {fileID: 114033713574689360}
   - component: {fileID: 114273684747318320}
+  - component: {fileID: 114149146232592336}
   - component: {fileID: 114974233704011780}
   - component: {fileID: 114966816690831418}
   - component: {fileID: 114655099410800016}
   - component: {fileID: 153111608753185462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -547,6 +548,25 @@ MonoBehaviour:
   thrusterForce: 1200
   jointSpring: 15
   jointMaxForce: 40
+--- !u!114 &114149146232592336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729408289307048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4f2c5b596d98644898b00df2bd4f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon:
+    gunName: Glock
+    damage: 10
+    range: 100
+  cam: {fileID: 20324343124103866}
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967039
 --- !u!114 &114205579192824534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -571,11 +591,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867287c2389970246890126f862da3cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  componentsToDiable:
-  - {fileID: 114205579192824534}
+  componentsToDisable:
   - {fileID: 114033713574689360}
+  - {fileID: 114205579192824534}
   - {fileID: 20324343124103866}
+  - {fileID: 114149146232592336}
   - {fileID: 81974355196419614}
+  remoteLayerName: RemotePlayer
 --- !u!114 &114655099410800016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -677,7 +699,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.4551915e-11, y: 1, z: 5}
+  m_ConnectedAnchor: {x: 0, y: 1, z: 0}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
