@@ -4,28 +4,48 @@ using UnityEngine;
 public class PlayerSetup : NetworkBehaviour {
 
     [SerializeField]
-    Behaviour[] componentsToDiable;
+    private Behaviour[] componentsToDisable;
+
+    [SerializeField]
+    string remoteLayerName = "RemotePlayer";
 
     Camera sceneCamera;
 
     private void Start()
     {
-        if(!isLocalPlayer) //if not local player
+        if (!isLocalPlayer) //if not local player
         {
-            foreach(Behaviour item in componentsToDiable) //disable all player control scripts
-            {
-                item.enabled = false; 
-            }
+            DisableComponenets();
+            AssignRemoteLayer();
         }
         else //if local player
         {
             sceneCamera = Camera.main;
-            if(sceneCamera != null)
+            if (sceneCamera != null)
             {
                 sceneCamera.gameObject.SetActive(false); // turn off lobby camera
             }
         }
-            
+        RegisterPlayer(); //Registers player
+    }
+
+    void RegisterPlayer()
+    {
+        string _ID = "Player" + GetComponent<NetworkIdentity>().netId;
+        transform.name = _ID;
+    }
+
+    private void AssignRemoteLayer()
+    {
+        gameObject.layer = LayerMask.NameToLayer(remoteLayerName);
+    }
+
+    private void DisableComponenets()
+    {
+        foreach (Behaviour item in componentsToDisable) //disable all remote player control scripts
+        {
+            item.enabled = false;
+        }
     }
 
     private void OnDisable() //basically a destructor
