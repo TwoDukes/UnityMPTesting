@@ -27,6 +27,8 @@ public class PlayerSetup : NetworkBehaviour {
                 sceneCamera.gameObject.SetActive(false); // turn off lobby camera
             }
         }
+
+        GetComponent<Player>().Setup(); //Sets up players health and stores active components to be disabled on death
     }
 
     private void AssignRemoteLayer()
