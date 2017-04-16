@@ -49,12 +49,17 @@ public class PlayerShoot : NetworkBehaviour {
                 CancelInvoke("Shoot");
             }
         }
-        
     }
     
     [Client]
     private void Shoot()
     {
+        if (!isLocalPlayer)
+            return;
+
+        //We are shooting, call the OnShoot method on the server
+        CmdOnShoot();
+
         RaycastHit _hit;
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out _hit, currentWeapon.range, mask)) //if we hit something
         {
@@ -62,11 +67,46 @@ public class PlayerShoot : NetworkBehaviour {
             {
                 CmdPlayerShot(_hit.collider.name, currentWeapon.damage);
             }
+
+            CmdOnHit(_hit.point, _hit.normal); //we hit something, call onHit method on server
         }
     }
 
+    //This is called on the server when the player shoots
     [Command]
-    void CmdPlayerShot(string _PlayerID, int _damage)
+    private void CmdOnShoot()
+    {
+        RpcDoShootEffect();
+    }
+    
+    //This is called on all clients when we need a shoot effect
+    [ClientRpc]
+    private void RpcDoShootEffect()
+    {
+        weaponManager.GetCurrentGraphics().muzzleFlash.Play(); //plays particle effect (muzzle flash)
+    }
+
+    //Is called on server when we hit something
+    //takes in the hit point and the surface normal
+    [Command]
+    private void CmdOnHit(Vector3 _pos, Vector3 _normal)
+    {
+        RpcDoImpactEffect(_pos, _normal);
+    }
+
+    //Is called on all clients
+    //here we can spawn in cool effects
+    [ClientRpc]
+    private void RpcDoImpactEffect(Vector3 _pos, Vector3 _normal)
+    {
+        //TODO: should do object pooling later
+        GameObject _hitEffect = (GameObject)Instantiate(weaponManager.GetCurrentGraphics().impactEffect, _pos, Quaternion.LookRotation(_normal));
+        Destroy(_hitEffect, 2f);
+    }
+
+    //Called on the server when a player is shot
+    [Command]
+    private void CmdPlayerShot(string _PlayerID, int _damage)
     {
         Debug.Log(_PlayerID + " has been shot");
 

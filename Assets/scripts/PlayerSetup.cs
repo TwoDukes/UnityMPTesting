@@ -37,7 +37,7 @@ public class PlayerSetup : NetworkBehaviour {
                 sceneCamera.gameObject.SetActive(false); // turn off lobby camera
             }
             //Disable player graphics for local player
-            SetLayerRecursively(playerGraphics, LayerMask.NameToLayer(dontDrawLayer));
+            Util.SetLayerRecursively(playerGraphics, LayerMask.NameToLayer(dontDrawLayer));
 
             //Create player UI
             playerUIInstance = Instantiate(playerUIPrefab);
@@ -45,16 +45,6 @@ public class PlayerSetup : NetworkBehaviour {
         }
 
         GetComponent<Player>().Setup(); //Sets up players health and stores active components to be disabled on death
-    }
-
-    private void SetLayerRecursively(GameObject obj, int newLayer)
-    {
-        obj.layer = newLayer;
-
-        foreach(Transform child in obj.transform)
-        {
-            SetLayerRecursively(child.gameObject, newLayer); //Recursively sets child layers to DontDraw
-        }
     }
 
     private void AssignRemoteLayer()
