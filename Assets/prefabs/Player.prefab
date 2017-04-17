@@ -765,10 +765,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95b5cff03cdf3f4c87f2e006e23a8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KForKill: 1
   maxHealth: 100
   disableOnDeath:
   - {fileID: 114033713574689360}
   - {fileID: 114185756028945002}
+  disableGameobjectsOnDeath:
+  - {fileID: 1090024317631158}
+  - {fileID: 1719102839254078}
+  deathEffect: {fileID: 1453852719505028, guid: 9a5de4503167ac840942e8d26c13fe61,
+    type: 2}
+  spawnEffect: {fileID: 1235240113053290, guid: c6fc8570dc5fd3149be7f28fabb6878f,
+    type: 2}
 --- !u!114 &114185756028945002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -820,6 +828,7 @@ MonoBehaviour:
   playerGraphics: {fileID: 1090024317631158}
   playerUIPrefab: {fileID: 1457365473774362, guid: 7ceaf998b446b9c49a95dfcfe23c64b9,
     type: 2}
+  playerUIInstance: {fileID: 0}
 --- !u!114 &114655099410800016
 MonoBehaviour:
   m_ObjectHideFlags: 1
