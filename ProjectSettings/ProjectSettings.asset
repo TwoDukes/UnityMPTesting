@@ -591,7 +591,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
   cloudProjectId: 52331200-6bce-4154-9db6-c0ed8a96993e
-  projectName: Multiplayer test project
+  projectName: Multiplayer fps
   organizationId: dustin-podell
   cloudEnabled: 0
   enableNewInputSystem: 0
