@@ -2,6 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
+[RequireComponent(typeof(PlayerController))]
 public class PlayerSetup : NetworkBehaviour {
 
     [SerializeField]
@@ -42,6 +43,12 @@ public class PlayerSetup : NetworkBehaviour {
             //Create player UI
             playerUIInstance = Instantiate(playerUIPrefab);
             playerUIInstance.name = playerUIPrefab.name;
+
+            //configure player UI
+            PlayerUI ui = playerUIInstance.GetComponent<PlayerUI>();
+            if (ui == null)
+                Debug.LogError("no PlayerUI component on PlayerUI prefab");
+            ui.SetPlayerConstroller(GetComponent<PlayerController>());
         }
 
         GetComponent<Player>().Setup(); //Sets up players health and stores active components to be disabled on death

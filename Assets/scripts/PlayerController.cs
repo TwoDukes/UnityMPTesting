@@ -6,13 +6,25 @@ using UnityEngine;
 [RequireComponent(typeof(ConfigurableJoint))]
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour {
+
+    #region Variables  
+
     [Header("Movement Settings:")]
     [SerializeField]
     private float speed = 5f;
     [SerializeField]
     private float lookSensitivity = 3f;
     [SerializeField]
+
+    [Header("Thruster Settings:")]
     private float thrusterForce = 1000f;
+    [SerializeField]
+    private float thrusterFuelBurnSpeed = 1f;
+    [SerializeField]
+    private float thrusterFuelRegenSpeed = 0.3f;
+    private float thrusterFuelAmount = 1f;
+    [SerializeField]
+    private LayerMask enviromentMask;
 
     [Header("Spring Settings:")]
     [SerializeField]
@@ -25,6 +37,8 @@ public class PlayerController : MonoBehaviour {
     private ConfigurableJoint joint;
     private Animator animator;
 
+    #endregion
+
     private void Start()
     {
         motor = GetComponent<PlayerMotor>();
@@ -36,6 +50,8 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
+
+        CalulateGround();
         CalulateVelocity();
         CalulateRotation();
         CalulateCamRotation();
@@ -49,6 +65,20 @@ public class PlayerController : MonoBehaviour {
             maximumForce = jointMaxForce
         };
     }
+
+    private void CalulateGround() //sets target position for the spring
+    {
+        RaycastHit hit;
+        //looks for object below. if found set spring target to object, else set to ground
+        if(Physics.Raycast(transform.position, Vector3.down, out hit, 100f, enviromentMask))
+        {
+            joint.targetPosition = new Vector3(0f, -hit.point.y, 0f);
+        }else
+        {
+            joint.targetPosition = new Vector3(0f, 0f, 0f);
+        }
+    }
+
 
     private void CalulateVelocity()
     {
@@ -98,16 +128,31 @@ public class PlayerController : MonoBehaviour {
         //Calculate thruster force
         Vector3 _thrusterForce = Vector3.zero;
 
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Jump") && thrusterFuelAmount > 0)
         {
-            _thrusterForce = Vector3.up * thrusterForce;
-            setJointSettings(0f); //turns off spring while jumping
+            thrusterFuelAmount -= thrusterFuelBurnSpeed * Time.deltaTime; //Burns off fuel while flying
+
+            if(thrusterFuelAmount >= 0.01f)
+            {
+                _thrusterForce = Vector3.up * thrusterForce;
+                setJointSettings(0f); //turns off spring while jumping
+            }
         }
         else
         {
+            thrusterFuelAmount += thrusterFuelRegenSpeed * Time.deltaTime; //Regens fuel while not flying
+
             setJointSettings(jointSpring); //turns on spring while not jumping
         }
+
+        thrusterFuelAmount = Mathf.Clamp(thrusterFuelAmount, 0f, 1.0f); //keeps thruster fuel from going over 100%
+
         //apply thruster force
         motor.ApplyThruster(_thrusterForce);
+    }
+
+    public float GetThrusterFuelAmount()
+    {
+        return thrusterFuelAmount;
     }
 }

@@ -155,12 +155,12 @@ GameObject:
   - component: {fileID: 33033910775162992}
   - component: {fileID: 135712605412575680}
   - component: {fileID: 54073798616091144}
+  - component: {fileID: 114143051008088196}
   - component: {fileID: 114205579192824534}
   - component: {fileID: 114033713574689360}
   - component: {fileID: 114273684747318320}
   - component: {fileID: 114185756028945002}
   - component: {fileID: 114866395604537646}
-  - component: {fileID: 114143051008088196}
   - component: {fileID: 114974233704011780}
   - component: {fileID: 114966816690831418}
   - component: {fileID: 114655099410800016}
@@ -747,6 +747,11 @@ MonoBehaviour:
   speed: 5
   lookSensitivity: 7
   thrusterForce: 1200
+  thrusterFuelBurnSpeed: 0.6
+  thrusterFuelRegenSpeed: 0.3
+  enviromentMask:
+    serializedVersion: 2
+    m_Bits: 4096
   jointSpring: 15
   jointMaxForce: 40
 --- !u!114 &114143051008088196
