@@ -28,6 +28,9 @@ public class PlayerMotor : MonoBehaviour {
     //runs every physics iteration
     private void FixedUpdate()
     {
+        if (PauseMenu.isOn)
+           return;
+
         PerformMovement();
         PerformRotation();
     }

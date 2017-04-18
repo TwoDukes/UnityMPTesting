@@ -139,6 +139,7 @@
     <Compile Include="Assets\scripts\HostGame.cs" />
     <Compile Include="Assets\scripts\JoinGame.cs" />
     <Compile Include="Assets\scripts\MatchSettings.cs" />
+    <Compile Include="Assets\scripts\PauseMenu.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
     <Compile Include="Assets\scripts\PlayerController.cs" />
     <Compile Include="Assets\scripts\PlayerMotor.cs" />

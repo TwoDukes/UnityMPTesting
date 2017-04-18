@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour {
         //Calculate thruster force
         Vector3 _thrusterForce = Vector3.zero;
 
-        if (Input.GetButton("Jump") && thrusterFuelAmount > 0)
+        if (Input.GetButton("Jump") && thrusterFuelAmount > 0 && !PauseMenu.isOn)
         {
             thrusterFuelAmount -= thrusterFuelBurnSpeed * Time.deltaTime; //Burns off fuel while flying
 
