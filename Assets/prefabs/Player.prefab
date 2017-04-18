@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 124694597924561344}
   - component: {fileID: 92160342319216032}
   - component: {fileID: 81974355196419614}
+  - component: {fileID: 114717194044954686}
   m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
@@ -765,7 +766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95b5cff03cdf3f4c87f2e006e23a8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KForKill: 1
   maxHealth: 100
   disableOnDeath:
   - {fileID: 114033713574689360}
@@ -848,6 +848,18 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.3
   m_InterpolateMovement: 0
+--- !u!114 &114717194044954686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1719102839254078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9dae5987d2bfa1d449ecdce63b3f98e2, type: 2}
 --- !u!114 &114739727694217768
 MonoBehaviour:
   m_ObjectHideFlags: 1
