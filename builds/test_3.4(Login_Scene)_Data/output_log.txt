@@ -1,0 +1,60 @@
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   21.21.13.7892
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\DatabaseControl.dll (this message is harmless)
+Loading C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\DatabaseControl.dll into Unity Child Domain
+- Completed reload, in  0.260 seconds
+Platform assembly: C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\wearelights\Documents\GitHub\Multiplayer test project\builds\test_3.4(Login_Scene)_Data\Managed\System.dll (this message is harmless)
+desktop: 2560x1440 144Hz; virtual: 4480x1440 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.993902 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 85f8 -> priority: 1 
+  Thread -> id: 998c -> priority: 1 
+Logged in as: test123
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.581306 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 753.
+Total: 0.642018 ms (FindLiveObjects: 0.048097 ms CreateObjectMapping: 0.027306 ms MarkObjects: 0.551719 ms  DeleteObjects: 0.014273 ms)
+
+MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ logged out
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.909607 ms
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 759.
+Total: 0.802444 ms (FindLiveObjects: 0.040960 ms CreateObjectMapping: 0.025755 ms MarkObjects: 0.672427 ms  DeleteObjects: 0.062681 ms)
+
