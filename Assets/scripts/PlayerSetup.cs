@@ -43,7 +43,7 @@ public class PlayerSetup : NetworkBehaviour {
             PlayerUI ui = playerUIInstance.GetComponent<PlayerUI>();
             if (ui == null)
                 Debug.LogError("no PlayerUI component on PlayerUI prefab");
-            ui.SetPlayerConstroller(GetComponent<PlayerController>());
+            ui.SetPlayerController(GetComponent<PlayerController>());
 
             GetComponent<Player>().SetupPlayer(); //Sets up local players health and stores active components to be disabled on death
         }

@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour {
         };
     }
 
+    #region Calculate Functions
     private void CalulateGround() //sets target position for the spring
     {
         RaycastHit hit;
@@ -150,6 +151,7 @@ public class PlayerController : MonoBehaviour {
         //apply thruster force
         motor.ApplyThruster(_thrusterForce);
     }
+    #endregion
 
     public float GetThrusterFuelAmount()
     {

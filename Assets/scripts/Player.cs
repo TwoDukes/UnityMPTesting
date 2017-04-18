@@ -5,6 +5,7 @@ using System.Collections;
 [RequireComponent(typeof(PlayerSetup))]
 public class Player : NetworkBehaviour {
 
+    #region Variables
     [SyncVar]
     private bool isDead = false; //cannot mark props as syncVar
     public bool _isDead          //This is why we have a var and a prop
@@ -36,7 +37,7 @@ public class Player : NetworkBehaviour {
 
     private bool firstSetup = true;
 
-
+    #endregion
     //private void Update()
     //{
     //        if (!isLocalPlayer)

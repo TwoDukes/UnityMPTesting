@@ -17,7 +17,7 @@ public class PlayerUI : MonoBehaviour {
         thrusterFuelFill.localScale = new Vector3(1f, _amount, 1f);
     }
 
-    public void SetPlayerConstroller(PlayerController _controller)
+    public void SetPlayerController(PlayerController _controller)
     {
         controller = _controller;
     }
