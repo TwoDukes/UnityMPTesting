@@ -50,6 +50,15 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
+        if (PauseMenu.isOn)
+        {
+            if(Cursor.lockState != CursorLockMode.None)
+                Cursor.lockState = CursorLockMode.None;
+
+        }else if(!PauseMenu.isOn && Cursor.lockState != CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
 
         CalulateGround();
         CalulateVelocity();

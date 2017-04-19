@@ -6,7 +6,7 @@ public class HostGame : MonoBehaviour {
 
     private uint roomSize = 2;
 
-    private string roomName;
+    private string roomName = "";
 
     private string roomPassword = "";
 
