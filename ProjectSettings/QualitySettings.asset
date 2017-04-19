@@ -31,7 +31,11 @@ QualitySettings:
     particleRaycastBudget: 4
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Standalone
+    - iPhone
+    - Android
+    - WebGL
   - serializedVersion: 2
     name: Fast
     pixelLightCount: 0
@@ -57,7 +61,11 @@ QualitySettings:
     particleRaycastBudget: 16
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Standalone
+    - iPhone
+    - Android
+    - WebGL
   - serializedVersion: 2
     name: Simple
     pixelLightCount: 1
@@ -83,7 +91,10 @@ QualitySettings:
     particleRaycastBudget: 64
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - iPhone
+    - Android
+    - WebGL
   - serializedVersion: 2
     name: Good
     pixelLightCount: 2
@@ -109,7 +120,10 @@ QualitySettings:
     particleRaycastBudget: 256
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - iPhone
+    - Android
+    - WebGL
   - serializedVersion: 2
     name: Beautiful
     pixelLightCount: 3
@@ -135,7 +149,10 @@ QualitySettings:
     particleRaycastBudget: 1024
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - iPhone
+    - Android
+    - WebGL
   - serializedVersion: 2
     name: Fantastic
     pixelLightCount: 4
@@ -161,9 +178,12 @@ QualitySettings:
     particleRaycastBudget: 4096
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - iPhone
+    - Android
+    - WebGL
   m_PerPlatformDefaultQuality:
-    Android: 2
+    Android: 0
     Nintendo 3DS: 5
     PS4: 5
     PSM: 5
@@ -172,9 +192,9 @@ QualitySettings:
     Standalone: 5
     Tizen: 2
     Web: 5
-    WebGL: 3
+    WebGL: 0
     WiiU: 5
     Windows Store Apps: 5
     XboxOne: 5
-    iPhone: 2
+    iPhone: 0
     tvOS: 2

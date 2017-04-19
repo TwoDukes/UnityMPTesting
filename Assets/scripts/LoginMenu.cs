@@ -88,7 +88,7 @@ public class LoginMenu : MonoBehaviour {
     }
     IEnumerator RegisterUser()
     {
-        IEnumerator e = DCF.RegisterUser(playerUsername, playerPassword, "Hello World"); // << Send request to register a new user, providing submitted username and password. It also provides an initial value for the data string on the account, which is "Hello World".
+        IEnumerator e = DCF.RegisterUser(playerUsername, playerPassword, "[KILLS]0/[DEATHS]0"); // << Send request to register a new user, providing submitted username and password. It also provides an initial value for the data string on the account, which is "Hello World".
         while (e.MoveNext())
         {
             yield return e.Current;
@@ -100,6 +100,7 @@ public class LoginMenu : MonoBehaviour {
             //Username and Password were valid. Account has been created. Stop showing 'Loading...' and show the loggedIn UI and set text to display the username.
             ResetAllUIElements();
             loadingParent.gameObject.SetActive(false);
+            UserAccountManager.instance.LogIn(playerUsername, playerPassword);
         } else
         {
             //Something went wrong logging in. Stop showing 'Loading...' and go back to RegisterUI

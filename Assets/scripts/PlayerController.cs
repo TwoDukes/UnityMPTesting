@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour {
     private void CalulateRotation()
     {
         //Calculate Rotation as a 3D vector (Turning around)
-        float _yRot = Input.GetAxisRaw("Mouse X");
+        float _yRot = Input.GetAxis("Mouse X");
 
         Vector3 _rotation = new Vector3(0, _yRot, 0) * lookSensitivity;
 

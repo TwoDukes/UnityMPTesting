@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 135712605412575680}
   - component: {fileID: 54073798616091144}
   - component: {fileID: 114143051008088196}
+  - component: {fileID: 114692925913877542}
   - component: {fileID: 114205579192824534}
   - component: {fileID: 114033713574689360}
   - component: {fileID: 114273684747318320}
@@ -767,6 +768,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  kills: 0
+  deaths: 0
   disableOnDeath:
   - {fileID: 114033713574689360}
   - {fileID: 114185756028945002}
@@ -823,6 +826,7 @@ MonoBehaviour:
   - {fileID: 81974355196419614}
   - {fileID: 95552918824700754}
   - {fileID: 20404633536487220}
+  - {fileID: 114692925913877542}
   remoteLayerName: RemotePlayer
   dontDrawLayer: DontDraw
   playerGraphics: {fileID: 1090024317631158}
@@ -848,6 +852,18 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.3
   m_InterpolateMovement: 0
+--- !u!114 &114692925913877542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729408289307048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac15a755cfe1004d847e82f3cd4bbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncTimeDelay: 20
 --- !u!114 &114717194044954686
 MonoBehaviour:
   m_ObjectHideFlags: 1
